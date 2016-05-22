@@ -32,5 +32,13 @@ $ cd NOME_DA_PASTA
 $ python run.py
 ```
 
+Quando o server estiver executando, você pode testar as respostas da API usando `curl`. Alguns exemplos abaixo:
+
+```sh
+$ curl -X GET "http://127.0.0.1:5000/properties?ax=88&ay=200&bx=100&by=200"
+$ curl -X GET "http://127.0.0.1:5000/properties/30"
+$ curl -H "Content-Type: application/json" -X POST "http://127.0.0.1:5000/properties" -d '{ "x": 222, "y": 444, "beds": 4, "baths": 3, "squareMeters": 210}'
+```
+
 # Testes
 Uma suite de testes foi criada dentro do arquivo `api_test.py`. Para realizar os testes na aplicação, execute o comando `python run_tests.py` a partir da pasta raiz do projeto.
